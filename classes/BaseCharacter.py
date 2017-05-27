@@ -1,5 +1,5 @@
-from core.classes.Base import Base
-from core.functions.Factory import collisionMovement
+from classes.Base import Base
+from functions.Factory import collisionMovement
 
 
 class BaseCharacter(Base):
