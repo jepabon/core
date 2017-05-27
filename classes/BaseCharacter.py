@@ -1,5 +1,5 @@
-from classes.Base import Base
-from functions.Factory import collisionMovement
+from core.classes.Base import Base
+from core.functions.Factory import collisionMovement
 
 
 class BaseCharacter(Base):
@@ -47,10 +47,12 @@ class BaseCharacter(Base):
     def set_attribute(self, agility=None,strength=None, intelligence=None, dexterity=None):
         if agility:
             self.agility = agility
+            self.evasion = self.agility * 0.1
         if strength:
             self.strength = strength
         if intelligence:
             self.intelligence = intelligence
+            self.mana = self.intelligence * 2
         if dexterity:
             self.dexterity = dexterity
 
