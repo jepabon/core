@@ -23,23 +23,24 @@ class BaseCharacter(Base):
         pos['x'] = self.position['x']
         pos['width'] = self.size['width']
         pos['height'] = self.size['height']
-        if up:
+        if up == True:
             pos['y'] = self.position['y'] - self.speed
             if not collisionMovement(base_one=pos, limit={'x': 400, 'y': 400}):
                 self.position['y'] -= self.speed
-        elif down:
+        elif down == True:
             pos['y'] = self.position['y'] + self.speed
             if not collisionMovement(base_one=pos, limit={'x': 400, 'y': 400}):
                 self.position['y'] += self.speed
-        if right:
+        if right == True:
             pos['x'] = self.position['x'] + self.speed
             if not collisionMovement(base_one=pos, limit={'x': 400, 'y': 400}):
-                print "Entra"
                 self.position['x'] += self.speed
-        elif left:
+        elif left == True:
             pos['x'] = self.position['x'] - self.speed
             if not collisionMovement(base_one=pos, limit={'x': 400, 'y': 400}):
                 self.position['x'] -= self.speed
+
+        return self.position
 
     def change_life(self, life):
         self.life += life
